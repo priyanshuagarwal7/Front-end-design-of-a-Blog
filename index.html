@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>iBlog</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .navbar-div {
+            display: flex;
+            /* justify-content: center;  */
+            align-items: center;
+            /* background-color: black; */
+        }
+
+        .heading {
+            margin-left: 1.5rem;
+            /* color: white; */
+        }
+
+        .items {
+            margin-left: 18rem;
+        }
+
+        .tabs {
+            display: flex;
+            margin-top: 1.2rem;
+        }
+
+        .tabs li {
+            list-style: none;
+            margin-left: 0.8rem;
+            margin-right: 0.8rem;
+        }
+
+        .tabs li a {
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            /* color: white; */
+        }
+
+        .tabs li a:hover {
+            color: blue;
+        }
+
+        .tabs li a:active {
+            color: blue;
+        }
+
+        .login {
+            margin-left: 15rem;
+        }
+
+        .login-link {
+            text-decoration: none;
+            border: 1px solid green;
+            padding-top: 4px;
+            padding-left: 10px;
+            padding-right: 8px;
+            padding-bottom: 4px;
+            border-radius: 4px;
+            color: green;
+            font-size: 18px;
+            margin: 6px;
+
+        }
+
+        .login-link:hover {
+            background-color: green;
+            color: white;
+        }
+
+        .center-img {
+            position: relative;
+            background-image: url('https://source.unsplash.com/1400x550/?programming,tech');
+            min-height: 550px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .center-txt {
+            width: 40vw;
+            position: absolute;
+            margin-left: 5vw;
+            margin-top: 8vw;
+        }
+
+        .center-link a {
+            text-decoration: none;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .inner-card {
+            display: flex;
+        }
+
+        .inner-card img {
+            border-radius: 4px;
+        }
+
+        .inner-card img:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .inner-content {
+            margin-left: 20px;
+        }
+
+        .inner-content h6 a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .content-img {
+            width: 450px;
+            position: relative;
+            background-image: url('https://source.unsplash.com/450x510/?programming,tech');
+            min-height: 510px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 4px;
+        }
+
+        .inner-img {
+            width: 685px;
+            position: relative;
+            background-image: url('https://source.unsplash.com/685x300/?programming,tech');
+            min-height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 4px;
+            margin-left: 15px;
+        }
+
+        .inner-img1 {
+            display: flex;
+        }
+
+        .imgclass {
+            width: 336px;
+            position: relative;
+            background-image: url('https://source.unsplash.com/336x200/?programming,tech');
+            min-height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 4px;
+            margin-top: 10px;
+            margin-left: 15px;
+        }
+
+        .first {
+            width: 50%;
+            margin-top: 4rem;
+            margin-left: 5rem;
+        }
+
+        .first img {
+            border-radius: 4px;
+        }
+
+        .first div {
+            margin-top: 2.5rem;
+        }
+
+        .first div h4 {
+            margin-top: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .first div p {
+            margin-top: 1.5rem;
+        }
+
+        .post-content {
+            display: flex;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .post-content h5 {
+            margin-right: 0px;
+        }
+
+        .post-content img {
+            margin-left: 0px;
+            border-radius: 4px;
+        }
+
+        .posts {
+            margin-top: 4rem;
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-div">
+        <h1 class="heading">iBlog</h1>
+        <div class="items">
+            <ul class="tabs">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">LifeStyle</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Food</a></li>
+            </ul>
+        </div>
+        <div class="login">
+            <a href="#" class="login-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
+            <a href="#" class="login-link" data-bs-toggle="modal" data-bs-target="#signupModal">Sign-Up</a>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+
+
+    <!--login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="exampleModalLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Enter your username">
+
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Enter your password">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- signup modal  -->
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">SignUp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Enter Your Name">
+
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Enter a UserName">
+
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                placeholder="Enter Your Age">
+
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Male
+                            </label>
+                        </div>
+                        <div class="form-check mx-3">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Female
+                            </label>
+                        </div>
+                        <h4>Select your Topics of interest</h4>
+                        <div class="form-check  mx-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Lifestyle
+                            </label>
+                        </div>
+                        <div class="form-check mx-2 mt-2" mx-2 mt-2>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Technology
+                            </label>
+                        </div>
+                        <div class="form-check mx-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Sports
+                            </label>
+                        </div>
+                        <div class="form-check mx-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Nature
+                            </label>
+                        </div>
+                        <div class="form-check mx-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Cooking
+                            </label>
+                        </div>
+                        <div class="form-check mx-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                World
+                            </label>
+                        </div>
+                        <div class="form-check mx-2 mt-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Travel
+                            </label>
+                        </div>
+                        <select class="form-select my-3" aria-label="Default select example" placeholder="Select Your Stream">
+                            
+                            <option value="1">Reader</option>
+                            <option value="2">Writer</option>
+
+                        </select>
+                        <select class="form-select" aria-label="Default select example" placeholdre="How you came to know about Us">
+                            
+                            <option value="1">Internet</option>
+                            <option value="2">Newspaper</option>
+                            <option value="2">Family/Friends</option>
+                            <option value="2">Hoardings</option>
+                        </select>
+                        <div class="my-3">
+                            <label for="exampleFormControlTextarea1" class="form-label"></label>A note about youself
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter a password ">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Account </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="center-img">
+        <div class="center-txt">
+            <h5><span class="badge bg-success">TECHNOLOGY</span></h5>
+            <h1 class="center-link"><a href="">The 20 biggest Fintech comapnies in india 2020</a></h1>
+        </div>
+    </div>
+    <div class="container-fluid my-5"
+        style="width: 85vw;border: 0.6px solid grey;border-radius: 4px;height: 110px; display: flex;padding-top: 0.8rem;padding-bottom: 0.8rem;padding-right: 0.8rem;padding-left: 1.6rem;">
+        <div class="inner-card">
+            <img src="https://source.unsplash.com/110x73/?programming,tech" alt="" srcset="">
+            <div class="inner-content">
+                <h6><span class="badge bg-danger">SPORTS</span></h6>
+                <h6><a href="">The 20 biggest Fintech comapnies in india 2020</a></h6>
+            </div>
+        </div>
+        <div class="inner-card">
+            <img src="https://source.unsplash.com/110x73/?programming,tech" alt="" srcset="">
+            <div class="inner-content">
+                <h6><span class="badge bg-warning">WORLD</span></h6>
+                <h6><a href="">The 20 biggest Fintech comapnies in india 2020</a></h6>
+            </div>
+        </div>
+        <div class="inner-card">
+            <img src="https://source.unsplash.com/110x73/?programming,tech" alt="" srcset="">
+            <div class="inner-content">
+                <h6><span class="badge bg-success">NATURE</span></h6>
+                <h6><a href="">The 20 biggest Fintech comapnies in india 2020</a></h6>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-5" style="width: 85vw;height: 30rem;display: flex;">
+        <div class="content-img">
+
+        </div>
+        <div class="content-img1">
+            <div class="inner-img">
+
+            </div>
+            <div class="inner-img1">
+                <div class="imgclass"></div>
+                <div class="imgclass"></div>
+            </div>
+        </div>
+    </div>
+    <h2 class="container-fluid " style="margin-top:6rem;margin-left: 5rem;">
+        Popular Posts
+    </h2>
+    <div class="container-fluid" style="display: flex;">
+        <div class="first">
+            <img src="https://source.unsplash.com/600x400/?programming,tech" alt="" srcset="">
+            <div>
+                <h6><span class="badge bg-success">NATURE</span></h6>
+                <h4>The 20 biggest Fintech comapnies in india 2020</h4>
+                <div><span>By Carrol Atkinson</span><span> February 10, 2019</span></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed
+                    optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia
+                    porro id est.</p>
+            </div>
+        </div>
+        <div class="posts">
+            <div class="post">
+                <h6><span class="badge bg-success">NATURE</span></h6>
+                <div class="post-content">
+                    <h5>The 20 biggest Fintech comapnies in india 2020</h5>
+                    <img src="https://source.unsplash.com/120x90/?nature,water" alt="" srcset="">
+                </div>
+                <div style="margin-bottom: 1rem;margin-top: 0px;"><span>By Carrol Atkinson</span><span> February 10,
+                        2019</span></div>
+                <p style="width: 30vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
+                    laudantium sed optio</p>
+            </div>
+            <div class="post">
+                <h6><span class="badge bg-success">NATURE</span></h6>
+                <div class="post-content">
+                    <h5>The 20 biggest Fintech comapnies in india 2020</h5>
+                    <img src="https://source.unsplash.com/120x90/?nature,water" alt="" srcset="">
+                </div>
+                <div style="margin-bottom: 1rem;margin-top: 0px;"><span>By Carrol Atkinson</span><span> February 10,
+                        2019</span></div>
+                <p style="width: 30vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
+                    laudantium sed optio</p>
+            </div>
+            <div class="post">
+                <h6><span class="badge bg-success">NATURE</span></h6>
+                <div class="post-content">
+                    <h5>The 20 biggest Fintech comapnies in india 2020</h5>
+                    <img src="https://source.unsplash.com/120x90/?nature,water" alt="" srcset="">
+                </div>
+                <div style="margin-bottom: 1rem;margin-top: 0px;"><span>By Carrol Atkinson</span><span> February 10,
+                        2019</span></div>
+                <p style="width: 30vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor
+                    laudantium sed optio</p>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
